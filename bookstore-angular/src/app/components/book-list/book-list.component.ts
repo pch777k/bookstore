@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { BookService } from '../../services/book.service';
 import { Book } from '../../common/book';
 import { ActivatedRoute } from '@angular/router';
+import { NgbPaginationConfig} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-book-list',
@@ -12,10 +13,27 @@ import { ActivatedRoute } from '@angular/router';
 export class BookListComponent implements OnInit {
 
   books: Book[] = [];
-  currentCategoryId: number;
-  searchMode: boolean;
+  currentCategoryId = 1;
+  previousCategoryId = 1;
+  searchMode = false;
 
-  constructor(private bookService: BookService, private activatedRoute: ActivatedRoute) { }
+  // properties for client side paging
+
+  // pageOfItems: Array<Book>;
+  // pageSize: number = 5;
+
+  // new properties for server-side paging
+  currentPage = 1;
+  pageSize = 1;
+  totalRecords = 0;
+
+  constructor(private bookService: BookService,
+              private activatedRoute: ActivatedRoute,
+              configPagination: NgbPaginationConfig){
+                configPagination.maxSize = 3;
+                configPagination.boundaryLinks = true;
+              }
+
 
   ngOnInit() {
     this.activatedRoute.paramMap.subscribe(() => {
@@ -23,35 +41,70 @@ export class BookListComponent implements OnInit {
     });
   }
 
-  listBooks() {
+  /*client side paging
+  pageClick(pageOfItems: Array<Book>) {
+    // update current page of items
+    this.pageOfItems = pageOfItems;
+  } */
 
+  listBooks(){
     this.searchMode = this.activatedRoute.snapshot.paramMap.has('keyword');
 
-    if (this.searchMode) {
+    if (this.searchMode){
+      // do search work
       this.handleSearchBooks();
     } else {
+      // display books based on category
       this.handleListBooks();
     }
   }
 
-  handleListBooks() {
-    const hasBookCategoryId: boolean = this.activatedRoute.snapshot.paramMap.has('id');
-
-    if (hasBookCategoryId) {
+  handleListBooks(){
+    const hasCategoryId: boolean = this.activatedRoute.snapshot.paramMap.has('id');
+    if (hasCategoryId) {
       this.currentCategoryId = +this.activatedRoute.snapshot.paramMap.get('id');
-    } else {
+    }else {
       this.currentCategoryId = 1;
     }
 
-    this.bookService.getBooks(this.currentCategoryId).subscribe(
-      data => this.books = data
-    );
+    // setting up the page number to 1
+    // if user navigates to other category
+    if (this.previousCategoryId !== this.currentCategoryId) {
+      this.currentPage = 1;
+    }
+
+    this.previousCategoryId = this.currentCategoryId;
+
+    console.log('current page size', this.currentPage - 1);
+
+    this.bookService.getBooksPaginate(this.currentCategoryId,
+                                        this.currentPage - 1,
+                                        this.pageSize)
+                                        .subscribe(this.processResult());
   }
-  handleSearchBooks() {
+
+  handleSearchBooks(){
     const keyword: string = this.activatedRoute.snapshot.paramMap.get('keyword');
 
-    this.bookService.searchBooks(keyword).subscribe(
-      data => { this.books = data; }
-    );
+    this.bookService.searchBooks(keyword,
+                                  this.currentPage - 1,
+                                  this.pageSize)
+                                  .subscribe(this.processResult());
+  }
+
+  // client side paging and server side paging
+  updatePageSize(pageSize: number) {
+    this.pageSize = pageSize;
+    this.currentPage = 1;
+    this.listBooks();
+  }
+
+  processResult(){
+    return data => {
+      this.books = data._embedded.books;
+      this.currentPage = data.page.number + 1;
+      this.totalRecords = data.page.totalElements;
+      this.pageSize = data.page.size;
+    };
   }
 }
