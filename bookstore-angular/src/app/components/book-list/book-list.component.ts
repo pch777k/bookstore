@@ -3,6 +3,9 @@ import { BookService } from '../../services/book.service';
 import { Book } from '../../common/book';
 import { ActivatedRoute } from '@angular/router';
 import { NgbPaginationConfig} from '@ng-bootstrap/ng-bootstrap';
+import { CartService } from 'src/app/services/cart.service';
+import { CartItem } from 'src/app/common/cart-item';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-book-list',
@@ -24,11 +27,13 @@ export class BookListComponent implements OnInit {
 
   // new properties for server-side paging
   currentPage = 1;
-  pageSize = 1;
+  pageSize = 5;
   totalRecords = 0;
 
   constructor(private bookService: BookService,
               private activatedRoute: ActivatedRoute,
+              private cartService: CartService,
+              private spinnerService: NgxSpinnerService,
               configPagination: NgbPaginationConfig){
                 configPagination.maxSize = 3;
                 configPagination.boundaryLinks = true;
@@ -48,6 +53,8 @@ export class BookListComponent implements OnInit {
   } */
 
   listBooks(){
+
+    this.spinnerService.show();
     this.searchMode = this.activatedRoute.snapshot.paramMap.has('keyword');
 
     if (this.searchMode){
@@ -101,10 +108,17 @@ export class BookListComponent implements OnInit {
 
   processResult(){
     return data => {
+      this.spinnerService.hide();
       this.books = data._embedded.books;
       this.currentPage = data.page.number + 1;
       this.totalRecords = data.page.totalElements;
       this.pageSize = data.page.size;
     };
+  }
+
+  addToCart(book: Book) {
+    console.log(`book name: ${book.name} and price: ${book.unitPrice}`);
+    const cartItem = new CartItem(book);
+    this.cartService.addToCart(cartItem);
   }
 }

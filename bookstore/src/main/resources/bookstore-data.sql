@@ -2,6 +2,8 @@ INSERT INTO book_category(category_name) VALUES ('Web Development');
 INSERT INTO book_category(category_name) VALUES ('Programming');
 INSERT INTO book_category(category_name) VALUES ('Databases');
 INSERT INTO book_category(category_name) VALUES ('Administration');
+INSERT INTO book_category(category_name) VALUES ('Fantastyka');
+
 
 INSERT INTO book 
 (
@@ -15,6 +17,208 @@ INSERT INTO book
     category_id,
     date_created
 )
+VALUES 
+(
+	'fantastyka-100', 
+    'Wiedźmin. Tom 1. Ostatnie życzenie', 
+    'Geralt to wiedźmin, czyli ktoś, kto trudni się mordowaniem różnych bestii za pieniądze. Co ciekawe, tak naprawdę trudno byłoby go nazwać zwyczajnym człowiekiem, tak samo, jak nigdy nie jest i nigdy nie będzie przeciętnym wiedźminem.',
+    'assets/images/fantastyka/fantastyka-100.jpg',
+    1,
+    100,
+    600.00,
+    5, 
+    NOW()
+);
+
+INSERT INTO book 
+(
+	sku, 
+	name, 
+    description, 
+    image_url, 
+    active, 
+    units_in_stock,
+    unit_price, 
+    category_id,
+    date_created
+)
+VALUES 
+(
+	'fantastyka-101', 
+    'Wiedźmin. Tom 2. Miecz przeznaczenia', 
+    'Geralt nie ma łatwego życia, mimo że jest doskonale wyćwiczony w tym, co robi i posiada niezaprzeczalny talent. Tym razem przedstawia Czytelnikowi swoją złotą zasadę: nie zabija smoków, ponieważ to gatunek, który jest zagrożony wymarciem.',
+    'assets/images/fantastyka/fantastyka-101.jpg',
+    1,
+    100,
+    600.00,
+    5, 
+    NOW()
+);
+
+INSERT INTO book 
+(
+	sku, 
+	name, 
+    description, 
+    image_url, 
+    active, 
+    units_in_stock,
+    unit_price, 
+    category_id,
+    date_created
+)
+VALUES 
+(
+	'fantastyka-102', 
+    'Wiedźmin. Tom 3. Krew elfów', 
+    '"Krew elfów" to pierwsza z pięciu części sagi o Wiedźminie Geralcie. Król polskiej fantastyki, Andrzej Sapkowski, raczy czytelników wspaniałą i wciągającą literaturą na najwyższym poziomie.',
+    'assets/images/fantastyka/fantastyka-102.jpg',
+    1,
+    100,
+    600.00,
+    5, 
+    NOW()
+);
+
+
+INSERT INTO book 
+(
+	sku, 
+	name, 
+    description, 
+    image_url, 
+    active, 
+    units_in_stock,
+    unit_price, 
+    category_id,
+    date_created
+)
+VALUES 
+(
+	'fantastyka-103', 
+    'Wiedźmin. Tom 4. Czas pogardy', 
+    'Saga Wiedźmin do tej pory przyciągnęła uwagę setek tysięcy czytelników - nie tylko fanów fantastyki, ale i tych, którzy szukali książki skrojonej na miarę własnych potrzeb.',
+    'assets/images/fantastyka/fantastyka-103.jpg',
+    1,
+    100,
+    600.00,
+    5, 
+    NOW()
+);
+
+INSERT INTO book 
+(
+	sku, 
+	name, 
+    description, 
+    image_url, 
+    active, 
+    units_in_stock,
+    unit_price, 
+    category_id,
+    date_created
+)
+VALUES 
+(
+	'fantastyka-104', 
+    'Wiedźmin. Tom 5. Chrzest ognia', 
+    'Białowłosy Wiedźmin Geralt, piękna czarodziejka Yennefer i poszukująca swojego miejsca w świecie księżniczka Ciri - to bohaterowie książek Andrzeja Sapkowskiego, którzy zawładnęli wyobraźnią nie tylko polskich czytelników.',
+    'assets/images/fantastyka/fantastyka-104.jpg',
+    1,
+    100,
+    600.00,
+    5, 
+    NOW()
+);
+
+INSERT INTO book 
+(
+	sku, 
+	name, 
+    description, 
+    image_url, 
+    active, 
+    units_in_stock,
+    unit_price, 
+    category_id,
+    date_created
+)
+VALUES 
+(
+	'fantastyka-105', 
+    'Wiedźmin. Tom 6. Wieża jaskółki', 
+    'Klęska jest nieunikniona. Świadczy o tym niemal wszystko i każda bardziej spostrzegawcza istota dostrzeże to bez problemu. Przyczyną wydaje się jesienne Ekwinokcjum. Wszystko staje się coraz dziwniejsze i bardziej przerażające.',
+    'assets/images/fantastyka/fantastyka-105.jpg',
+    1,
+    100,
+    600.00,
+    5, 
+    NOW()
+);
+
+INSERT INTO book 
+(
+	sku, 
+	name, 
+    description, 
+    image_url, 
+    active, 
+    units_in_stock,
+    unit_price, 
+    category_id,
+    date_created
+)
+VALUES 
+(
+	'fantastyka-106', 
+    'Wiedźmin. Tom 7. Pani Jeziora', 
+    '"Pani Jeziora" to siódmy już tom sagi o Wiedźminie. Sapkowski przenosi nas do królestwa Aen Elle, do którego dostaje się jedna z głównych bohaterek - Ciri.',
+    'assets/images/fantastyka/fantastyka-106.jpg',
+    1,
+    100,
+    600.00,
+    5, 
+    NOW()
+);
+
+INSERT INTO book 
+(
+	sku, 
+	name, 
+    description, 
+    image_url, 
+    active, 
+    units_in_stock,
+    unit_price, 
+    category_id,
+    date_created
+)
+VALUES 
+(
+	'fantastyka-107', 
+    'Wiedźmin. Tom 8. Sezon burz', 
+    '"Sezon burz" to kolejna część przygód Geralta z Rivii. Choć słowo "kolejna" może tu być mylące, bo nie jest ona kontynuacją sagi. Wydarzenia w niej opisane są chronologicznie wcześniejsze, niż te z poprzednich tomów cyklu o Wiedźminie.',
+    'assets/images/fantastyka/fantastyka-107.jpg',
+    1,
+    100,
+    600.00,
+    5, 
+    NOW()
+);
+
+INSERT INTO book 
+(
+	sku, 
+	name, 
+    description, 
+    image_url, 
+    active, 
+    units_in_stock,
+    unit_price, 
+    category_id,
+    date_created
+)
+
 VALUES 
 (
 	'webdevelopment-100', 
