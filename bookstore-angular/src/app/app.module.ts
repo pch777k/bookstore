@@ -15,6 +15,7 @@ import { JwPaginationComponent } from 'jw-angular-pagination';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CartStatusComponent } from './components/cart-status/cart-status.component';
 import { CartDetailsComponent } from './components/cart-details/cart-details.component';
+// import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 const routes: Routes = [
   {path: 'books', component: BookListComponent},
@@ -35,6 +36,7 @@ const routes: Routes = [
     SearchComponent,
     BookDetailsComponent,
     JwPaginationComponent,
+    // FontAwesomeModule,
     CartStatusComponent,
     CartDetailsComponent
   ],
