@@ -27,7 +27,7 @@ export class BookListComponent implements OnInit {
 
   // new properties for server-side paging
   currentPage = 1;
-  pageSize = 5;
+  pageSize = 10;
   totalRecords = 0;
 
   constructor(private bookService: BookService,
