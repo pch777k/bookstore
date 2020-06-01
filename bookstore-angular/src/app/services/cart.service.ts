@@ -32,6 +32,7 @@ totalQuantity: Subject<number> = new Subject<number>();
 
     this.calculateTotalPrice();
   }
+
   calculateTotalPrice() {
     let totalPriceValue = 0;
     let totalQuantityValue = 0;

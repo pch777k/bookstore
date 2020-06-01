@@ -3,7 +3,8 @@ INSERT INTO book_category(category_name) VALUES ('Programming');
 INSERT INTO book_category(category_name) VALUES ('Databases');
 INSERT INTO book_category(category_name) VALUES ('Administration');
 INSERT INTO book_category(category_name) VALUES ('Fantastyka');
-
+INSERT INTO book_category(category_name) VALUES ('Programowanie');
+INSERT INTO book_category(category_name) VALUES ('Bazy danych');
 
 INSERT INTO book 
 (
@@ -25,7 +26,7 @@ VALUES
     'assets/images/fantastyka/fantastyka-100.jpg',
     1,
     100,
-    600.00,
+    10.00,
     5, 
     NOW()
 );
@@ -50,7 +51,7 @@ VALUES
     'assets/images/fantastyka/fantastyka-101.jpg',
     1,
     100,
-    600.00,
+    11.00,
     5, 
     NOW()
 );
@@ -75,7 +76,7 @@ VALUES
     'assets/images/fantastyka/fantastyka-102.jpg',
     1,
     100,
-    600.00,
+    10.00,
     5, 
     NOW()
 );
@@ -101,7 +102,7 @@ VALUES
     'assets/images/fantastyka/fantastyka-103.jpg',
     1,
     100,
-    600.00,
+    12.00,
     5, 
     NOW()
 );
@@ -126,7 +127,7 @@ VALUES
     'assets/images/fantastyka/fantastyka-104.jpg',
     1,
     100,
-    600.00,
+    12.00,
     5, 
     NOW()
 );
@@ -151,7 +152,7 @@ VALUES
     'assets/images/fantastyka/fantastyka-105.jpg',
     1,
     100,
-    600.00,
+    9.00,
     5, 
     NOW()
 );
@@ -176,7 +177,7 @@ VALUES
     'assets/images/fantastyka/fantastyka-106.jpg',
     1,
     100,
-    600.00,
+    12.00,
     5, 
     NOW()
 );
@@ -201,7 +202,7 @@ VALUES
     'assets/images/fantastyka/fantastyka-107.jpg',
     1,
     100,
-    600.00,
+    11.00,
     5, 
     NOW()
 );
@@ -1204,5 +1205,406 @@ VALUES
     100,
     500.00,
     4, 
+    NOW()
+);
+
+INSERT INTO book 
+(
+	sku, 
+	name, 
+    description, 
+    image_url, 
+    active, 
+    units_in_stock,
+    unit_price, 
+    category_id,
+    date_created
+)
+VALUES 
+(
+	'programowanie-100', 
+    'Java 
+Kompendium programisty', 
+    'Mimo upływu lat Java wciąż pozostaje jednym z najważniejszych języków programowania, konsekwentnie wybieranym przez profesjonalnych deweloperów.',
+    'assets/images/programowanie/programowanie-100.jpg',
+    1,
+    100,
+    25.00,
+    6, 
+    NOW()
+);
+
+INSERT INTO book 
+(
+	sku, 
+	name, 
+    description, 
+    image_url, 
+    active, 
+    units_in_stock,
+    unit_price, 
+    category_id,
+    date_created
+)
+VALUES 
+(
+	'programowanie-101', 
+    'Spring w akcji', 
+    'Spring jest frameworkiem ułatwiającym tworzenie nowoczesnych aplikacji w Javie. To narzędzie, które dynamicznie się rozwija i z każdym nowym wydaniem zapewnia programistom kolejne, ekscytujące możliwości.',
+    'assets/images/programowanie/programowanie-101.jpg',
+    1,
+    100,
+    15.00,
+    6, 
+    NOW()
+);
+
+INSERT INTO book 
+(
+	sku, 
+	name, 
+    description, 
+    image_url, 
+    active, 
+    units_in_stock,
+    unit_price, 
+    category_id,
+    date_created
+)
+VALUES 
+(
+	'programowanie-102', 
+    'Kotlin w akcji', 
+    'Kotlin został zaprojektowany jako obiektowy język w pełni interoperacyjny z kodem napisanym w Javie.  Kotlin jest ciągle rozwijany, a jego popularność stale rośnie. Kotlin jest językiem o statycznie typowanych zmiennych.',
+    'assets/images/programowanie/programowanie-102.jpg',
+    1,
+    100,
+    14.00,
+    6, 
+    NOW()
+);
+
+INSERT INTO book 
+(
+	sku, 
+	name, 
+    description, 
+    image_url, 
+    active, 
+    units_in_stock,
+    unit_price, 
+    category_id,
+    date_created
+)
+VALUES 
+(
+	'programowanie-103', 
+    'Java. Podstawy', 
+    'Świat usłyszał o Javie pod koniec 1995 roku. Wkrótce stała się niezwykle popularną i cenioną technologią. Dziś jest dojrzałym, rozbudowanym, elastycznym, a przy tym niezwykle starannie zaprojektowanym językiem programowania.',
+    'assets/images/programowanie/programowanie-103.jpg',
+    1,
+    100,
+    19.00,
+    6, 
+    NOW()
+);
+
+INSERT INTO book 
+(
+	sku, 
+	name, 
+    description, 
+    image_url, 
+    active, 
+    units_in_stock,
+    unit_price, 
+    category_id,
+    date_created
+)
+VALUES 
+(
+	'programowanie-104', 
+    'Angular Profesjonalne techniki programowania', 
+    'Framework Angular 2 jest dziś uważany za jeden z najwydajniejszych sposobów rozwijania średnich i dużych aplikacji internetowych. Te aplikacje działają bez problemu niezależnie od platformy.',
+    'assets/images/programowanie/programowanie-104.jpg',
+    1,
+    100,
+    21.00,
+    6, 
+    NOW()
+);
+
+INSERT INTO book 
+(
+	sku, 
+	name, 
+    description, 
+    image_url, 
+    active, 
+    units_in_stock,
+    unit_price, 
+    category_id,
+    date_created
+)
+VALUES 
+(
+	'programowanie-105', 
+    'React 16 Framework dla profesjonalistów', 
+    'W ostatnich latach JavaScript stał się pełnoprawnym i pełnowartościowym językiem programowania. Jest wszechstronny, elastyczny i pozwala na tworzenie znakomitego kodu. Uzyskanie dobrych efektów wymaga jednak od programisty sporych umiejętności.',
+    'assets/images/programowanie/programowanie-105.jpg',
+    1,
+    100,
+    18.00,
+    6, 
+    NOW()
+);
+
+INSERT INTO book 
+(
+	sku, 
+	name, 
+    description, 
+    image_url, 
+    active, 
+    units_in_stock,
+    unit_price, 
+    category_id,
+    date_created
+)
+VALUES 
+(
+	'programowanie-106', 
+    'Vue.js 2 Wprowadzenie dla profesjonalistów', 
+    'Vue.js jest frameworkiem, który służy do budowy nowoczesnych, reaktywnych i skalowanych aplikacji WWW, a przy tym ułatwia korzystanie z komponentów wielokrotnego użytku.',
+    'assets/images/programowanie/programowanie-106.jpg',
+    1,
+    100,
+    16.00,
+    6, 
+    NOW()
+);
+
+INSERT INTO book 
+(
+	sku, 
+	name, 
+    description, 
+    image_url, 
+    active, 
+    units_in_stock,
+    unit_price, 
+    category_id,
+    date_created
+)
+VALUES 
+(
+    'programowanie-107', 
+    'Java. Techniki zaawansowane w.11', 
+    'Java jest dojrzałym językiem programowania, który pozwala na pisanie kodu dla wielu rodzajów komputerów służących do różnych celów i działających na różnych platformach. ',
+    'assets/images/programowanie/programowanie-107.jpg',
+    1,
+    100,
+    16.00,
+    6, 
+    NOW()
+);
+
+INSERT INTO book 
+(
+	sku, 
+	name, 
+    description, 
+    image_url, 
+    active, 
+    units_in_stock,
+    unit_price, 
+    category_id,
+    date_created
+)
+VALUES 
+(
+    'programowanie-108', 
+    'Szybsza Sieć z językami PHP, MySQL i JavaScript', 
+    'Dzięki tej książce dowiesz się, w jaki sposób poprawić działanie każdej aplikacji WWW, Wkrótce rozpoczniesz pracę z najnowszymi narzędziami do mierzenia wydajności, profilowania i monitorowania dla PHP, MySQL i JavaScriptu.',
+    'assets/images/programowanie/programowanie-108.jpg',
+    1,
+    100,
+    16.00,
+    6, 
+    NOW()
+);
+
+INSERT INTO book 
+(
+	sku, 
+	name, 
+    description, 
+    image_url, 
+    active, 
+    units_in_stock,
+    unit_price, 
+    category_id,
+    date_created
+)
+VALUES 
+(
+    'programowanie-109', 
+    'Czysty kod. Podręcznik dobrego programisty', 
+    'O tym, ile problemów sprawia niedbale napisany kod, wie każdy programista. Nie wszyscy jednak wiedzą, jak napisać ten świetny, „czysty” kod i czym właściwie powinien się on charakteryzować. Co więcej – jak odróżnić dobry kod od złego?',
+    'assets/images/programowanie/programowanie-109.jpg',
+    1,
+    100,
+    16.00,
+    6, 
+    NOW()
+);
+
+INSERT INTO book 
+(
+    sku, 
+    name, 
+    description, 
+    image_url, 
+    active, 
+    units_in_stock,
+    unit_price, 
+    category_id,
+    date_created
+)
+VALUES 
+(
+    'bazydanych-100', 
+    'Praktyczny kurs SQL', 
+    'SQL to dziś właściwie jedyny poważny język używany do tworzenia i obsługi relacyjnych baz danych, niezależnie od tego, czy są to bazy Microsoftu, Oracle czy Sun Microsystems.',
+    'assets/images/bazydanych/bazydanych-100.jpg',
+    1,
+    100,
+    11.00,
+    7, 
+    NOW()
+);
+
+INSERT INTO book 
+(
+    sku, 
+    name, 
+    description, 
+    image_url, 
+    active, 
+    units_in_stock,
+    unit_price, 
+    category_id,
+    date_created
+)
+VALUES 
+(
+    'bazydanych-101', 
+    'Język SQL. Przyjazny podręcznik.', 
+    'Najlepsze relacyjne bazy danych, takie jak Oracle czy MS SQL Server, są nierozłącznie związane z językiem SQL. Język ten stworzono po to, aby budować i użytkować bazy przechowujące ogromne ilości danych.',
+    'assets/images/bazydanych/bazydanych-101.jpg',
+    1,
+    100,
+    11.00,
+    7, 
+    NOW()
+);
+
+INSERT INTO book 
+(
+    sku, 
+    name, 
+    description, 
+    image_url, 
+    active, 
+    units_in_stock,
+    unit_price, 
+    category_id,
+    date_created
+)
+VALUES 
+(
+    'bazydanych-102', 
+    'NoSQL. Przyjazny przewodnik', 
+    'Systemy do zarządzania danymi muszą dziś spełniać o wiele wyższe wymagania niż kiedyś. W wielu przypadkach nierelacyjne bazy danych, zwane NoSQL, są lepszym rozwiązaniem niż dominujące do niedawna bazy relacyjne.',
+    'assets/images/bazydanych/bazydanych-102.jpg',
+    1,
+    100,
+    15.00,
+    7, 
+    NOW()
+);
+
+INSERT INTO book 
+(
+    sku, 
+    name, 
+    description, 
+    image_url, 
+    active, 
+    units_in_stock,
+    unit_price, 
+    category_id,
+    date_created
+)
+VALUES 
+(
+    'bazydanych-103', 
+    'Pierwsze kroki z SQL. Praktyczne podejście dla początkujących', 
+    'Dzisiejsze firmy gromadzą ogromne ilości danych. Dane te jednak mogą przynieść wymierną korzyść jedynie wtedy, gdy są w odpowiedni sposób przechowywane, należycie zabezpieczone i jeśli się umie z nich skorzystać.',
+    'assets/images/bazydanych/bazydanych-103.jpg',
+    1,
+    100,
+    10.00,
+    7, 
+    NOW()
+);
+
+INSERT INTO book 
+(
+    sku, 
+    name, 
+    description, 
+    image_url, 
+    active, 
+    units_in_stock,
+    unit_price, 
+    category_id,
+    date_created
+)
+VALUES 
+(
+    'bazydanych-104', 
+    'SQL Server. Wstęp dla programistów.', 
+    'SQL Server to serwer baz danych firmy Microsoft. To oprogramowanie, rozwijane od ponad ćwierćwiecza, cieszy się ogromną popularnością i uznaniem na całym świecie. Charakteryzuje się wysoką wydajnością i bezpieczeństwem.',
+    'assets/images/bazydanych/bazydanych-104.jpg',
+    1,
+    100,
+    20.00,
+    7, 
+    NOW()
+);
+
+INSERT INTO book 
+(
+    sku, 
+    name, 
+    description, 
+    image_url, 
+    active, 
+    units_in_stock,
+    unit_price, 
+    category_id,
+    date_created
+)
+VALUES 
+(
+    'bazydanych-105', 
+    'Bazy danych i PostgreSQL. Od podstaw', 
+    'PostgreSQL wciąż zyskuje na popularności i jest uważany za najlepszy darmowy system zarządzania relacyjnymi bazami danych.',
+    'assets/images/bazydanych/bazydanych-105.jpg',
+    1,
+    100,
+    15.00,
+    7, 
     NOW()
 );

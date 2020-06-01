@@ -14,16 +14,16 @@
 
   <div class="col-lg-9">
     <div class="row">
-      <div class="col-lg-4 col-md-6 mb-4" *ngFor="let book of books">
+      <div class="col-lg-3 col-md-6 mb-4" *ngFor="let book of books">
         <div class="card h-100">
           <a routerLink="/books/{{book.id}}">
-            <img class="card-img-top img-responsive" [src]="book.imageUrl" height="250" width="100">
+            <img class="card-img-top img-responsive" [src]="book.imageUrl" height="250" width="70">
           </a>
           <div class="card-body">
-            <h4 class="card-title">
+            <h5 class="card-title">
               <a routerLink="/books/{{book.id}}">{{book.name}}</a>
-            </h4>
-            <h5>{{book.unitPrice/50 | currency: 'EUR'}}</h5>
+            </h5>
+            <h6>{{book.unitPrice | currency: 'EUR'}}</h6>
             <p class="card-text text-truncate">{{book.description}}
             </p>
           </div>
@@ -45,8 +45,8 @@
             </div>
             <div class="col-md-9">
               <select (change)="updatePageSize($event.target.value)" class="form-control-sm" style="width: 20%;">
-                <option selected>5</option>
-                <option>10</option>
+                <option >5</option>
+                <option selected>10</option>
                 <option>20</option>
                 <option>50</option>
               </select>
